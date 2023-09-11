@@ -1,0 +1,17 @@
+.detail{
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+}
+.contDetail{
+    background-color: aqua;
+    width: 500px;
+    height: 1000px;
+    padding: 1rem;
+
+}
+.img{
+    width: 250px;
+    height: 300px;
+}

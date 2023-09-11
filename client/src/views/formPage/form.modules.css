@@ -1,0 +1,58 @@
+/* Estilo para el formulario */
+.Div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 100%;
+    height: 100%;
+    background-color: #130f0f;
+}
+.form {
+    width: 30%;
+    height: 70%;
+    margin-top: 3rem;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #3d0909;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  /* Estilo para los campos de entrada de texto */
+  input[type="text"],
+  input[type="date"],
+  textarea,
+  select {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  /* Estilo para las etiquetas */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el botón */
+  button[type="submit"] {
+    background-color: #01070c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Estilo para el botón al pasar el mouse por encima */
+  button[type="submit"]:hover {
+    background-color: #500101;
+  }
+  

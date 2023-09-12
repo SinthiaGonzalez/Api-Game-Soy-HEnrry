@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { formData, postFormData, validationPass } from '../../redux/action/action'
-import './form.modules.css'
+import style from './form.module.css'
 import Validations from "./validations/validations";
 
 const Form = () => {
@@ -15,7 +15,7 @@ const Form = () => {
       dispatch(postFormData(formDataInputs)); // Enviamos la action al back con la info de los inputs
       alert("Se creo el juego con exito !!"); // Alerta de que se creo el juego
       dispatch(validationPass(false))
-    }else{
+    } else {
       alert('verifique los datos ingresados y presione OK')
     }
   };// Función para manejar el submit de los inputs es decir eniviar la info al back
@@ -55,8 +55,8 @@ const Form = () => {
 
   //* asignamos lo valores del formdat al value para que concida con los del estado global 
   return (
-    <div className="Div">
-      <form onSubmit={handleSubmit} className="form">
+    <div className={style.divform}>
+      <form onSubmit={handleSubmit} className={style.form}>
         <div >
           <label htmlFor="name">Nombre del juego:</label>
           <input
@@ -121,11 +121,25 @@ const Form = () => {
             onChange={handleGenreChange}
             required
           >
-            <option value="Family">Family</option>
-            <option value="Card">Card</option>
+            <option value="Action">Action</option>
             <option value="Arcade">Arcade</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Board Games">Board Games</option>
+            <option value="Casual">Casual</option>
+            <option value="Card">Card</option>
+            <option value="Educational">Educational</option>
+            <option value="Fighting">Fighting</option>
+            <option value="Family">Family</option>
+            <option value="Indie">Indie</option>
+            <option value="Massively Multiplayer">Massively Multiplayer</option>
+            <option value="Puzzle">Puzzle</option>
+            <option value="Platformer">Platformer</option>
+            <option value="RPG">RPG</option>
             <option value="Racing">Racing</option>
-            {/* Agrega más opciones según tus necesidades */}
+            <option value="Shooter">Shooter</option>
+            <option value="Strategy">Strategy</option>
+            <option value="Simulation">Simulation</option>
+            <option value="Sports">Sports</option>
           </select>
         </div>
         <div>
@@ -137,14 +151,23 @@ const Form = () => {
             onChange={handlePlatformsChange}
             required
           >
-            <option value="PC">PC</option>
+            <option value="">Platforms</option>
             <option value="PlayStation">PlayStation</option>
             <option value="Xbox">Xbox</option>
             <option value="Nintendo Switch">Nintendo Switch</option>
-            {/* Agrega más opciones según tus necesidades */}
+            <option value="PC">PC</option>
+            <option value="iOS">iOS</option>
+            <option value="Android">Android</option>
+            <option value="macOS">macOS</option>
+            <option value="Linux">Linux</option>
+            <option value="Apple Macintosh">Apple Macintosh</option>
+
+
           </select>
         </div>
-        <button type="submit">Crear</button>
+        <div>
+        <button type="submit" className={style.btn}>Crear</button>
+        </div>
       </form>
       <Validations />
     </div>

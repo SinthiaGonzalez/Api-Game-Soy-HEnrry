@@ -6,7 +6,6 @@ function Navbar() {
     return (
       <nav className="nav">
         <ul>
-          <li><Link to="/home">Inicio</Link></li>
           <li><Link to="/videogames/form">crear Game</Link></li>
           <li><Link to="/videogames/search"><button>Search game by name...</button></Link></li>
         </ul>

@@ -1,17 +1,53 @@
-.detail{
-display: flex;
-flex-direction:column;
-align-items: center;
-justify-content: center;
-}
-.contDetail{
-    background-color: aqua;
-    width: 500px;
-    height: 1000px;
-    padding: 1rem;
+/* details.module.css */
 
-}
-.img{
-    width: 250px;
-    height: 300px;
-}
+.detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../../assets/img/dpufUM.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .contDetail {
+    background-color: #ffffff65;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .img {
+    max-width: 20%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-family: "miFuente";
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-family: "miFuente";
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Add any additional styling you need for your component here */
+  

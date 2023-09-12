@@ -1,12 +1,35 @@
-.searchBar{
-    margin-top: 2rem;
-    width: 70%;
-}
+/* searchbar.module.css */
 
-.sercontain{
+.sercontain {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0f0e0e;
-    height: max-content;
-}
+    padding: 20px;
+    background-image: url("../../assets/img/buscador.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 300px;
+    margin-right: 10px;
+  }
+  
+  .divCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  

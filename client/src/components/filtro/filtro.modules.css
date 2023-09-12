@@ -1,0 +1,19 @@
+/* Estilo para el contenedor principal */
+.fildiv {
+    background-color: #1a1b1baf; /* Cambia el color de fondo según tus preferencias */
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+}
+
+/* Estilo para las opciones cuando se seleccionan */
+option:checked {
+    background-color: #d90000a6; /* Cambia el color de fondo de la opción seleccionada */
+    color: #fff; /* Cambia el color del texto de la opción seleccionada */
+}
+
+.divselect{
+    width: 100%;
+}

@@ -63,12 +63,12 @@ const Validations = () => {
 
       <div >
         {genreName.map((genre) => (
-          <button key={genre} className="BTN" onClick={() => handleRemoveGenre(genre)}>
+          <button key={genre} className="btn" onClick={() => handleRemoveGenre(genre)}>
             {genre}
           </button>
         ))}
       </div>
-      <div><button key="ok" onClick={handleOkDispatch} disabled={!ok}>OK</button></div>
+      <div><button key="ok" onClick={handleOkDispatch} disabled={!ok} className="ok">OK</button></div>
     </div>
 
   )

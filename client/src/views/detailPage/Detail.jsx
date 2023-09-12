@@ -18,11 +18,11 @@ const Details = () => {
             <div className="contDetail">
             <h1>Detalles del juego</h1>
             <img className="img" src={image} alt="img not found" />
-            <h3>nombre:{name}</h3>
+            <h3>{name}</h3>
             <h4>Genero: {genres}</h4>
             <p>Descripcion: {description}</p>
-            <h3>Creado:{released}</h3>
-            <h3>Rating: {rating}</h3>
+            <h3>{released}</h3>
+            <h3> {rating}</h3>
             <p>Platforms: {platforms}</p>
             </div>
            

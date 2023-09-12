@@ -11,7 +11,7 @@ const Card = ({ id, name, image, rating, genres }) => {
         <p className="card-info">Rating: {rating}</p>
         <p className="card-info">Genres: {genres.join(", ")}</p>
         <Link to={`/videogame/${id}`}>
-          <button className="card-button">More Details</button>
+          <button className="btn">More Details</button>
         </Link>
       </div>
     </div>

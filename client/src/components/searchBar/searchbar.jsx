@@ -1,7 +1,7 @@
 
 import "./searchbar.modules.css";
 import Cards from "../Cards/Cards";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getGameByName } from "../../redux/action/action";
 import React, { useState } from "react";
 
@@ -16,6 +16,7 @@ const OnSearch = () => {
     };
     return (
         <div className="sercontain">
+
             <div className="searchBar">
                 <input
                     type="text"
@@ -23,9 +24,13 @@ const OnSearch = () => {
                     value={inputname}
                     onChange={(event) => setinputname(event.target.value)}
                 />
-                <button onClick={handleSearch}>Search</button>
+                <button onClick={handleSearch} className="btn">Search</button>
             </div>
-            <Cards Allgames={gamesByname}/>
+
+            <div className="divCard">
+                <Cards Allgames={gamesByname} />
+            </div>
+
         </div>
 
     );

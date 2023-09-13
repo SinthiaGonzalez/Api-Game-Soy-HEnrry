@@ -18,7 +18,7 @@ const initialState = {
     validationPass: true,
     gameByname: [],
     filterSelected: [], //almacena el genero del filtro selecionado
-    filteredGames: [], //almacena los juegos filtrados
+    filteredGames: [], //almacena los juegos filtrados por genero
     filterOrigin: [], //almacena los juegos sea api o db
     selectedOrigin: [], //almacena la seleccion del usuario sea api o db
 };
@@ -99,31 +99,32 @@ const rootReducer = (state= initialState, action) => {
                 } else if (order === "desc") {
                   // Orden descendente
                   sortedGames.sort((a, b) => b.name.localeCompare(a.name));
-                }
+                }else if(order==="order"){
+                    sortedGames = [...state.allgames];
+                };
                 return {
                   ...state,
                   filteredGames: sortedGames,
                 };
                 case FILTER_BY_RATING:
-                    const rating = action.payload;
-
-                    const filteredGames = [...state.filteredGames]; // Clonamos la lista para no mutar el estado original
-                  
-                    if (rating === "1-5") {
-                      // Ordenar los juegos por rating de menor a mayor (1-5)
-                      const filteredGamesByRating = filteredGames.sort((a, b) => a.rating - b.rating);
-                      return {
-                        ...state,
-                        filteredGames: filteredGamesByRating,
-                      };
-                    } else if (rating === "5-1") {
-                      // Ordenar los juegos por rating de mayor a menor (5-1)
-                      const filteredGamesByRating = filteredGames.sort((a, b) => b.rating - a.rating);
-                      return {
-                        ...state,
-                        filteredGames: filteredGamesByRating,
-                      };
-                    }
+                  const rating = action.payload;
+                  let filteredGamesByRating;
+                
+                  if (rating === "1-5") {
+                    // Ordenar los juegos por rating de menor a mayor (1-5)
+                    filteredGamesByRating = [...state.filteredGames].sort((a, b) => a.rating - b.rating);
+                  } else if (rating === "5-1") {
+                    // Ordenar los juegos por rating de mayor a menor (5-1)
+                    filteredGamesByRating = [...state.filteredGames].sort((a, b) => b.rating - a.rating);
+                  } else if (rating === "Rating") {
+                    // no aplicamos filtro
+                    filteredGamesByRating = [...state.allgames];
+                  }
+                  return {
+                    ...state,
+                    filteredGames: filteredGamesByRating,
+                  };
+                
                     case FILTER_BY_ORIGIN:
                         const origin = action.payload;
                         const filteredGames1 = [...state.filteredGames];

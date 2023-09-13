@@ -38,7 +38,7 @@ const Filtros = () => {
             dispatch(filterByOrder(selectedValue));
         } else if (selectedValue === "desc") {
             dispatch(filterByOrder(selectedValue));
-        } else if (selectedValue === "") {
+        } else if (selectedValue === "order") {
             dispatch(filterByOrder(selectedValue));
         };
     }
@@ -50,7 +50,7 @@ const Filtros = () => {
             dispatch(filterByRating(selectedValue));
         } else if (selectedValue === "5-1") {
             dispatch(filterByRating(selectedValue));
-        } else if (selectedValue === "") {
+        } else if (selectedValue === "Rating") {
             dispatch(filterByRating(selectedValue));
         };
     };
@@ -102,7 +102,7 @@ const Filtros = () => {
             </div>
             <div className="divselect">
                 <select name="order" id="order" value={selectedOrder} onChange={handleOrderChange}>
-                    <option value="">Ordenar</option>
+                    <option value="order">Ordenar</option>
                     <option value="asc">Ascendente</option>
                     <option value="desc">Descendente</option>
                 </select>
@@ -110,7 +110,7 @@ const Filtros = () => {
 
             <div className="divselect">
                 <select name="ratingO" id="ratingO" value={selectedRating} onChange={handleRatingChange}>
-                    <option value="">Rating</option>
+                    <option value="Rating">Rating</option>
                     <option value="1-5">1 a 5</option>
                     <option value="5-1">5 a 1</option>
                 </select>

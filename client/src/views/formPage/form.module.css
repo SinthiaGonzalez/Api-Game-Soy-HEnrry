@@ -3,10 +3,18 @@
 * {
   box-sizing: border-box;
 }
-
 .divform {
   display: flex;
   justify-content: center;
+
+ 
+}
+.divbuton{
+  display: flex;
+}
+.divgeneral{
+  display: flex;
+  flex-direction: column;
   background-image: url("../../assets/img/fondoForm.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,7 +23,7 @@
 }
 .form {
   width: 30%;
-  height: 70%;
+  height: 95%;
   margin-top: 3rem;
   padding: 1.5rem;
   box-shadow: 2px 2px 2px 0px rgb(119, 41, 41);

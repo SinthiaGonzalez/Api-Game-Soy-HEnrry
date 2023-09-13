@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { getAllGames, filterGamesByGenre, filterByOrder, filterByOrigin, filterByRating } from "../../redux/action/action";
 import "./filtro.modules.css";
 const Filtros = () => {
     const dispatch = useDispatch();
+    const allgames = useSelector((state) => state.allgames);
     //creamos los estados locales que captura los eventos del genero
     const [selectedGenre, setselectedGenre] = useState("")
 
@@ -70,7 +71,7 @@ const Filtros = () => {
     useEffect(() => {
         setTimeout(() => {
             dispatch(filterGamesByGenre(selectedGenre));
-        }, 1000);
+        }, 2000);
     }, []);
 
     return (

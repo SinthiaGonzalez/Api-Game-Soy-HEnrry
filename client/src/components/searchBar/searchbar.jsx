@@ -4,6 +4,7 @@ import Cards from "../Cards/Cards";
 import { useSelector, useDispatch } from "react-redux";
 import { getGameByName } from "../../redux/action/action";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const OnSearch = () => {
 
@@ -16,8 +17,10 @@ const OnSearch = () => {
     };
     return (
         <div className="sercontain">
-
+           
             <div className="searchBar">
+               
+            <div> <Link to="/home"><button className="btn">Back to Home</button></Link></div>
                 <input
                     type="text"
                     placeholder="Search games by name..."

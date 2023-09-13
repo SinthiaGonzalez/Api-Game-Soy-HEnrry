@@ -1,7 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'; // importamos el hook useDispatch y useSelector para conectar al estado global
-import { useEffect, useState } from 'react'; // importamos el hook useEffect para hacer el dispatch a la action que trae los juegos
-import { getAllGames } from '../../redux/action/action'; // importamos la function de la action que trae los juegos
+import { useSelector } from 'react-redux'; // importamos el hook useDispatch y useSelector para conectar al estado global
+import { useState } from 'react'; 
 import Cards from '../../components/Cards/Cards'; // importamos el componente Cards al que le pasamos por props los juegos
 import './home.modules.css' // importamos el css del componente Home
 import Navbar from '../../components/Navbar/navbar'; // importamos el componente Navbar
@@ -9,15 +8,15 @@ import Filtros from '../../components/filtro/filtro'; // importamos el component
 
 
 function Home() {
-  const dispatch = useDispatch(); // declaramos la variable dispatch para hacer el dispatch a la action que trae los juegos
+ 
 
-  //traemos el estado con los juegos filtrados por genero
+  //traemos el estado con los juegos filtrados es el backup del filtro sea por genero o por asendente o desendente, rating
   const filteredGames = useSelector((state) => state.filteredGames);
 
-  //traemos el estado con los juegos filtrados por origen
+  //traemos el estado con los juegos filtrados por origen si es APi o DB
   const filteredByOrigin = useSelector((state) => state.filterOrigin);
 
-  //traemos el estado con la selecion de tipo origin 
+  //traemos el estado que contiene si el usuario seleciono origen de Api o DB
   const selectedOrigin = useSelector((state) => state.selectedOrigin);
 
   //*paginado
@@ -45,12 +44,6 @@ const totalPages = Math.ceil(gamesToDisplay.length / itemsPerPage)
       setCurrentPage(currentPage - 1);
     }
   };
-
-
-  // cuando se monta la pagina se hace el dispatch a la action que trae todos los juegos 
-  useEffect(() => {
-    dispatch(getAllGames());
-  }, [dispatch]);
 
   return (
     <div className='Home'>

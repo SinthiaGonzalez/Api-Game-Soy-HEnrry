@@ -54,7 +54,6 @@ select {
   border: 1px solid #720202;
   border-radius: 0.3rem;
   font-size: 1rem;
- 
 }
 
 /* Estilo para las etiquetas */
@@ -67,7 +66,6 @@ label {
 /* Estilo para el botón */
 button[type="submit"] {
   width: 60%;
-  background-color: #01070c;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -75,6 +73,18 @@ button[type="submit"] {
   cursor: pointer;
   font-size: 16px;
 }
+/* Estilo para el botón habilitado */
+button[type="submit"]:enabled {
+  background-color: rgb(65, 0, 0); /* Cambia el color de fondo cuando está habilitado */
+}
+
+/* Estilo para el botón deshabilitado */
+button[type="submit"]:disabled {
+  background-color: lightgray; /* Cambia el color de fondo cuando está deshabilitado */
+  color: gray; /* Cambia el color del texto cuando está deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor cuando está deshabilitado */
+}
+
 .btn {
   --glow-color: rgb(255, 188, 176);
   --glow-spread-color: rgba(255, 149, 123, 0.781);
@@ -96,31 +106,5 @@ button[type="submit"] {
   position: relative;
   transition: all 0.3s;
  }
+
  
- .btn::after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  top: 120%;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--glow-spread-color);
-  filter: blur(2em);
-  opacity: .7;
-  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
- }
- 
- .btn:hover {
-  color: var(--btn-color);
-  background-color: #500101;
-  box-shadow: 0 0 1em .25em var(--glow-color),
-         0 0 4em 2em var(--glow-spread-color),
-         inset 0 0 .75em .25em var(--glow-color);
- }
- 
- .btn:active {
-  box-shadow: 0 0 0.6em .25em var(--glow-color),
-         0 0 2.5em 2em var(--glow-spread-color),
-         inset 0 0 .5em .25em var(--glow-color);
- }

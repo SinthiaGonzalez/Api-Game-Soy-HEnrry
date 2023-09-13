@@ -10,8 +10,8 @@
 
 /* Estilo para las opciones cuando se seleccionan */
 option:checked {
-    background-color: #d90000a6; /* Cambia el color de fondo de la opción seleccionada */
-    color: #fff; /* Cambia el color del texto de la opción seleccionada */
+    background-color: #fffafa00; /* Cambia el color de fondo de la opción seleccionada */
+    
 }
 
 .divselect{

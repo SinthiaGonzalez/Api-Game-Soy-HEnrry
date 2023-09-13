@@ -15,7 +15,7 @@ const initialState = {
         genreName: [],
       }, // guardamos los datos del formulario en el estado global
     postFormDataResponse: [], // guardamos el error/ exito en el estado global 
-    validationPass: false,
+    validationPass: true,
     gameByname: [],
     filterSelected: [], //almacena el genero del filtro selecionado
     filteredGames: [], //almacena los juegos filtrados

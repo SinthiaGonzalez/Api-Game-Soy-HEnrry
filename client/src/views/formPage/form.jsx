@@ -8,15 +8,12 @@ const Form = () => {
   const dispatch = useDispatch(); // Hook de react-redux para dispachar las actions
   let formDataInputs = useSelector((state) => state.formDataInputs); // nos traemos el estado global de formDataInputs que seria la info de los inputs
   let validationPassState = useSelector((state) => state.validationPass); // nos traemos el buleano de validacionPass
-
   const handleSubmit = function (event) { //entra el evento de hacer click en el boton submit
     event.preventDefault(); // Previene el comportamiento default del submit de un formulario
     if (validationPassState === true) {
       dispatch(postFormData(formDataInputs)); // Enviamos la action al back con la info de los inputs
       alert("Se creo el juego con exito !!"); // Alerta de que se creo el juego
       dispatch(validationPass(false))
-    } else {
-      alert('verifique los datos ingresados y presione OK')
     }
   };// Función para manejar el submit de los inputs es decir eniviar la info al back
 
@@ -116,7 +113,7 @@ const Form = () => {
           <select
             id="genreName"
             name="genreName"
-            multiple={false}
+            multiple={true}
             value={formDataInputs.genreName}
             onChange={handleGenreChange}
             required
@@ -162,11 +159,10 @@ const Form = () => {
             <option value="Linux">Linux</option>
             <option value="Apple Macintosh">Apple Macintosh</option>
 
-
           </select>
         </div>
         <div>
-        <button type="submit" className={style.btn}>Crear</button>
+        <button type="submit" onClick={handleSubmit} disabled= {validationPassState} className={style.btn} >Crear</button>
         </div>
       </form>
       <Validations />

@@ -8,8 +8,7 @@ import Filtros from '../../components/filtro/filtro'; // importamos el component
 
 
 function Home() {
- 
-
+  
   //traemos el estado con los juegos filtrados es el backup del filtro sea por genero o por asendente o desendente, rating
   const filteredGames = useSelector((state) => state.filteredGames);
 

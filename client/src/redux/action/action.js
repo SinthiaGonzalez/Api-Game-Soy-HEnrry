@@ -3,6 +3,7 @@ import axios from 'axios'; // importamos axios pra las peticiones
 //creamos las constantes para las acciones es decir los types
 
 export const GET_ALL_GAMES = 'GET_ALL_GAMES';
+export const GET_ALL_GENRES = 'GET_ALL_GENRES';
 export const GET_GAME_BY_ID = 'GET_GAME_BY_ID';
 export const GET_GAME_BY_NAME = 'GET_GAME_BY_NAME';
 export const FORM_DATA = 'FORM_DATA';
@@ -34,6 +35,18 @@ export const getGameById = (id) => {
         });
     };
 };
+
+// obtenemos los generos y los guardamos en el payload
+export const getAllGenres = () => {
+    return async (dispatch) => {
+        const response = await axios.get('http://localhost:3001/genres');
+        dispatch({
+            type: GET_ALL_GENRES,
+            payload: response.data,
+        });
+    };
+}
+
 // obtenemos los juegos por nombre y los guardamos en el payload
 export const getGameByName = (name) => {
     return async (dispatch) => {

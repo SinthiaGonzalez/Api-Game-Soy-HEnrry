@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllGames, filterGamesByGenre, filterByOrder, filterByOrigin, filterByRating } from "../../redux/action/action";
 import "./filtro.modules.css";
 const Filtros = () => {
     const dispatch = useDispatch();
-    const allgames = useSelector((state) => state.allgames);
+    //traemos todos los generos del juego
+    const allgenrres = useSelector((state) => state.allgenrres);
+
     //creamos los estados locales que captura los eventos del genero
     const [selectedGenre, setselectedGenre] = useState("")
 
@@ -79,25 +81,11 @@ const Filtros = () => {
             <div className="divselect">
                 <select name="genre" id="genreF" value={selectedGenre} onChange={handleGenreChange}>
                     <option value="">Generos</option>
-                    <option value="Action">Action</option>
-                    <option value="Arcade">Arcade</option>
-                    <option value="Adventure">Adventure</option>
-                    <option value="Board Games">Board Games</option>
-                    <option value="Casual">Casual</option>
-                    <option value="Card">Card</option>
-                    <option value="Educational">Educational</option>
-                    <option value="Fighting">Fighting</option>
-                    <option value="Family">Family</option>
-                    <option value="Indie">Indie</option>
-                    <option value="Massively Multiplayer">Massively Multiplayer</option>
-                    <option value="Puzzle">Puzzle</option>
-                    <option value="Platformer">Platformer</option>
-                    <option value="RPG">RPG</option>
-                    <option value="Racing">Racing</option>
-                    <option value="Shooter">Shooter</option>
-                    <option value="Strategy">Strategy</option>
-                    <option value="Simulation">Simulation</option>
-                    <option value="Sports">Sports</option>
+                    {allgenrres.map((genre) => (
+                        <option key={genre.id} value={genre.name}>
+                            {genre.name}
+                        </option>
+                    ))}
                 </select>
             </div>
             <div className="divselect">

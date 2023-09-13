@@ -6,13 +6,22 @@ const url = `https://api.rawg.io/api/games?key=${RAWG_API_KEY}`;
 const { Videogame,Genres } = require('../db.js'); // importamos el modelo de la base de datos
 const getAllGames= async (req, res) => {
     try{
-       
-     
-       
-        const url2 = `${url}&page_size=100`;
-        const apiResponse = await axios.get(url2);
+        const url2 = `${url}&page_size=40`;
 
-            const apiGames = apiResponse.data.results.map(game => {
+        const response1 =(
+            await axios.get(`${url2}&page=1`)
+        ).data.results;
+        const response2 =(
+            await axios.get(`${url2}&page=2`)
+        ).data.results;
+        const response3 =(
+            await axios.get(`${url2}&page=3`)
+        ).data.results;
+
+      
+    const apiResponse = [...response1, ...response2, ...response3];
+
+            const apiGames = apiResponse.slice(0,100).map(game => {
                 const { name, background_image, rating, released, id, genres,} = game;
                 return {
                     id,
@@ -55,8 +64,8 @@ const getAllGames= async (req, res) => {
         // Error de la API
         return res.status(500).json({ error: 'Error al traer los juegos de la API' });
     } else {
-        // Error de otro tipo
-        return res.status(501).json({ error: 'Error al obtener los juegos de la base de datos' });
+       
+        return res.status(501).json({ error: 'Error al obtener los juegos' });
     }
 
     } 

@@ -21,7 +21,9 @@ const getGameByGender = async (req, res) => {
             await Genres.bulkCreate(genresFromAPI);
             genres = genresFromAPI; // Actualizamos el valor de "genres" para que contenga los generos de la api y si ya los contiene siempre los devolvera de la base de datos
         }
+        console.log(genres);
         return res.status(200).json(genres); // retornamos los generos
+        console.log(genres);
     }catch(error){
         console.log(error);
         return res.status(500).json({error: 'Error al obtener los generos'});

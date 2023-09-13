@@ -24,10 +24,10 @@ const Details = () => {
             <div className="detail">
 
                 <div className="contDetail">
-                    <h1>Detalles del juego</h1>
+                    <h1>Game Details</h1>
                     <img className="img" src={image} alt="img not found" />
                     <h3>{name}</h3>
-                    <h4>Genero: {Array.isArray(genres) ? genres.join(" | ") : "Cargando..."}</h4>
+                    <h4>Genres: {Array.isArray(genres) ? genres.join(" | ") : "Cargando..."}</h4>
                     <p>Descripcion: {description}</p>
                     <h3>{released ? released.slice(0, 10) : "Cargando..."}</h3>
                     <h3> {rating}</h3>

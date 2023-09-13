@@ -28,13 +28,13 @@ const Validations = () => {
     return imageRegex.test(image);
   }
   //? Validaciones
-  let nameValid = name.length === 0 ? <p>El nombre del juego es obligatorio</p> : null;
-  let descriptionValid = description.length < 30 || description.length > 200 ? <p>La descripción debe tener entre 30 y 200 caracteres.</p> : null;
-  let imageValid = isValidImageUrl(image) ? null : <p>La imagen debe ser una URL válida.</p>;
-  let ratingValid = isRatingValid ? null : <p>El rating debe estar entre 1 y 5.</p>;
-  let platformsValid = platforms.length === 0 ? <p>Debe seleccionar una plataforma</p> : null;
-  let releasedateValid = releasedate.length === 0 ? <p>Debe seleccionar una fecha</p> : null;
-  let genreNameValid = genreName.length === 0 ? <p>Debe seleccionar por lo menos un genero</p> : null;
+  let nameValid = name.length === 0 ? <p>The game name is required</p> : null;
+  let descriptionValid = description.length < 30 || description.length > 200 ? <p>Required character 30-200</p> : null;
+  let imageValid = isValidImageUrl(image) ? null : <p>The URL image must be valid</p>;
+  let ratingValid = isRatingValid ? null : <p>The rating must be between 1 and 5.</p>;
+  let platformsValid = platforms.length === 0 ? <p>select a platform</p> : null;
+  let releasedateValid = releasedate.length === 0 ? <p>Select a date</p> : null;
+  let genreNameValid = genreName.length === 0 ? <p>Select at least one genre</p> : null;
 
   useEffect(() => {
     // Verificar si todas las validaciones son null

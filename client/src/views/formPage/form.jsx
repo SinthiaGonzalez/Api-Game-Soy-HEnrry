@@ -64,7 +64,7 @@ const Form = () => {
 
         <form onSubmit={handleSubmit} className={style.form}>
           <div >
-            <label htmlFor="name">Nombre del juego:</label>
+            <label htmlFor="name">game name:</label>
             <input
               type="text"
               id="name"
@@ -75,7 +75,7 @@ const Form = () => {
             />
           </div>
           <div>
-            <label htmlFor="description">Descripción:</label>
+            <label htmlFor="description">Description:</label>
             <textarea
               id="description"
               name="description"
@@ -85,7 +85,7 @@ const Form = () => {
             />
           </div>
           <div>
-            <label htmlFor="releasedate">Fecha de Lanzamiento:</label>
+            <label htmlFor="releasedate">Release date:</label>
             <input
               type="date"
               id="releasedate"
@@ -96,7 +96,7 @@ const Form = () => {
             />
           </div>
           <div>
-            <label htmlFor="image">URL de la Imagen:</label>
+            <label htmlFor="image">Image URL:</label>
             <input
               type="text"
               id="image"
@@ -149,7 +149,7 @@ const Form = () => {
             </select>
           </div>
           <div>
-            <label htmlFor="platforms">Plataformas:</label>
+            <label htmlFor="platforms">Platforms:</label>
             <select
               id="platforms"
               name="platforms"
@@ -171,7 +171,7 @@ const Form = () => {
             </select>
           </div>
           <div>
-            <button type="submit" disabled={validationPassState} className={style.btn} >Crear</button>
+            <button type="submit" disabled={validationPassState} className={style.btn} >Create new Game</button>
           </div>
         </form>
         <Validations />

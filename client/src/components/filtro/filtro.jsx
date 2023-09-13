@@ -80,7 +80,7 @@ const Filtros = () => {
         <div className="fildiv">
             <div className="divselect">
                 <select name="genre" id="genreF" value={selectedGenre} onChange={handleGenreChange}>
-                    <option value="">Generos</option>
+                    <option value="">Genres</option>
                     {allgenrres.map((genre) => (
                         <option key={genre.id} value={genre.name}>
                             {genre.name}
@@ -90,24 +90,24 @@ const Filtros = () => {
             </div>
             <div className="divselect">
                 <select name="order" id="order" value={selectedOrder} onChange={handleOrderChange}>
-                    <option value="order">Ordenar</option>
-                    <option value="asc">Ascendente</option>
-                    <option value="desc">Descendente</option>
+                    <option value="order">Order by...</option>
+                    <option value="asc">A-Z</option>
+                    <option value="desc">Z-A</option>
                 </select>
             </div>
 
             <div className="divselect">
                 <select name="ratingO" id="ratingO" value={selectedRating} onChange={handleRatingChange}>
                     <option value="Rating">Rating</option>
-                    <option value="1-5">1 a 5</option>
-                    <option value="5-1">5 a 1</option>
+                    <option value="1-5">1 - 5</option>
+                    <option value="5-1">5 - 1</option>
                 </select>
             </div>
             <div className="divselect">
                 <select name="Origin" id="Origin" value={selectedOrigin} onChange={handleOrigin}>
-                    <option value="">procedente de la...</option>
+                    <option value="">FROM...</option>
                     <option value="Api">Api</option>
-                    <option value="DB">Base de datos</option>
+                    <option value="DB">Data Base</option>
                 </select>
             </div>
 
